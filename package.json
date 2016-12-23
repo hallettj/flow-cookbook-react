@@ -6,7 +6,8 @@
   "license": "MIT",
   "devDependencies": {
     "flow-bin": "^0.37.4",
-    "react-scripts": "0.8.4"
+    "react-scripts": "0.8.4",
+    "regenerator-runtime": "^0.10.1"
   },
   "dependencies": {
     "hacker-news-example": "hallettj/hacker-news-example#master",
