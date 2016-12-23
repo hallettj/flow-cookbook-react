@@ -1,0 +1,23 @@
+{
+  "name": "flow-cookbook-react",
+  "version": "1.0.0",
+  "description": "Example of type-checking a React app with Flow",
+  "author": "Jesse Hallett <jesse@sitr.us>",
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.37.4",
+    "react-scripts": "0.8.4"
+  },
+  "dependencies": {
+    "hacker-news-example": "hallettj/hacker-news-example#master",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow"
+  }
+}
