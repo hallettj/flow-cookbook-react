@@ -1,21 +1,72 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* @flow */
 
-class App extends Component {
+import React, { Component } from 'react'
+import { fetchComments, fetchTopStories } from 'hacker-news-example'
+import './App.css'
+import StoryListItem from './StoryListItem'
+import StoryView from './StoryView'
+
+import type { Story } from 'hacker-news-example'
+
+type AppState = {
+  selectedStory?: ?Story,
+  stories?: Story[],
+  error?: string,
+}
+
+class App extends Component<void,void,AppState> {
+  // Must declare `state` type in two places
+  state: AppState
+
+  constructor(props: void) {
+    super(props)
+    this.state = {}
+  }
+
+  componentDidMount() {
+    fetchTopStories(15)
+      .then(stories => {
+        this.setState({ stories })
+      })
+      .catch(error => {
+        this.setState({ error })
+      })
+  }
+
   render() {
+    const { error, selectedStory, stories } = this.state
+
+    let content
+    if (error) {
+      content = <p className="error">{error}</p>
+    }
+    else if (selectedStory) {
+      content = <StoryView story={selectedStory} />
+    }
+    else if (stories) {
+      content = stories.map(story => (
+        <StoryListItem story={story} onSelect={() => this.selectStory(story)} />
+      ))
+    }
+    else {
+      content = <p className="loading">loading...</p>
+    }
+
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1>Flow Cookbook: React Example</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          {content}
+        </div>
       </div>
-    );
+    )
+  }
+
+  selectStory(story: Story) {
+    this.setState({ selectedStory: story })
   }
 }
 
-export default App;
+export default App
