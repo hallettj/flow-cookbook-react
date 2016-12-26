@@ -1,9 +1,12 @@
 /* @flow */
 
 import React, { Component } from 'react'
-import { fetchComments } from 'hacker-news-example'
+import { XmlEntities }      from 'html-entities'
+import { fetchComments }    from 'hacker-news-example'
 
 import type { Comment, CommentTree, Story } from 'hacker-news-example'
+
+const decode: (s: string) => string = (new XmlEntities()).decode
 
 type StoryViewProps = {
   story: Story,
@@ -84,6 +87,6 @@ type CommentViewProps = {
 function CommentView(props: CommentViewProps): React.Element<*> {
   const { comment } = props
   return <p className="comment">
-    {comment.by} commented: {comment.text}
+    {comment.by} commented: {decode(comment.text)}
   </p>
 }
