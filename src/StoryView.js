@@ -14,7 +14,7 @@ type StoryViewProps = {
 
 type StoryViewState = {
   commentTree?: CommentTree[],
-  error?: string,
+  error?: Error,
 }
 
 export default class StoryView extends Component<void, StoryViewProps, StoryViewState> {
@@ -40,7 +40,7 @@ export default class StoryView extends Component<void, StoryViewProps, StoryView
 
     let content
     if (error) {
-      content = <p className="error">{error}</p>
+      content = <p className="error">{error.message}</p>
     }
     else if (commentTree) {
       if (commentTree.length > 0) {

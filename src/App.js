@@ -11,7 +11,7 @@ import type { Story } from 'hacker-news-example'
 type AppState = {
   selectedStory?: ?Story,
   stories?: Story[],
-  error?: string,
+  error?: Error,
 }
 
 class App extends Component<void,void,AppState> {
@@ -38,7 +38,7 @@ class App extends Component<void,void,AppState> {
 
     let content
     if (error) {
-      content = <p className="error">{error}</p>
+      content = <p className="error">{error.message}</p>
     }
     else if (selectedStory) {
       content = <StoryView story={selectedStory} />
