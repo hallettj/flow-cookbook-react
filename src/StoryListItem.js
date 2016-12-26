@@ -11,10 +11,9 @@ type StoryListItemProps = {
 
 export default class StoryListItem extends Component<void,StoryListItemProps,void> {
   render() {
-    const { onSelect, story } = this.props
+    const { story } = this.props
     return <p>
-      <a href="#" onClick={event => this.onSelect(event)}>{story.title}</a>
-      posted by {story.by}
+      <a href="#" onClick={event => this.onSelect(event)}>{story.title}</a> posted by {story.by}
     </p>
   }
 

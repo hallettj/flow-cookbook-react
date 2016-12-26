@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react'
-import { fetchComments, fetchTopStories } from 'hacker-news-example'
+import { fetchTopStories } from 'hacker-news-example'
 import './App.css'
 import StoryListItem from './StoryListItem'
 import StoryView from './StoryView'
@@ -45,7 +45,11 @@ class App extends Component<void,void,AppState> {
     }
     else if (stories) {
       content = stories.map(story => (
-        <StoryListItem story={story} onSelect={() => this.selectStory(story)} />
+        <StoryListItem
+          story={story}
+          onSelect={() => this.selectStory(story)}
+          key={story.id}
+        />
       ))
     }
     else {

@@ -59,35 +59,31 @@ type CommentTreeProps = {
   commentTree: CommentTree[],
 }
 
-class Comments extends Component<void, CommentTreeProps, void> {
-  render() {
-    return <ul>
-      {this.props.commentTree.map(({ comment, kids }) => {
-        if (kids.length > 0) {
-          return <div className="comment-subtree">
-            <CommentView comment={comment} />
-            <Comments commentTree={kids} />
-          </div>
-        }
-        else {
-          return <div className="comment-leaf">
-            <CommentView comment={comment} />
-          </div>
-        }
-      })}
-    </ul>
-  }
+function Comments(props: CommentTreeProps): React.Element<*> {
+  return <ul>
+    {props.commentTree.map(({ comment, kids }) => {
+      if (kids.length > 0) {
+        return <div className="comment-subtree" key={comment.id}>
+          <CommentView comment={comment} />
+          <Comments commentTree={kids} />
+        </div>
+      }
+      else {
+        return <div className="comment-leaf" key={comment.id}>
+          <CommentView comment={comment} />
+        </div>
+      }
+    })}
+  </ul>
 }
 
 type CommentViewProps = {
   comment: Comment,
 }
 
-class CommentView extends Component<void, CommentViewProps, void> {
-  render() {
-    const { comment } = this.props
-    return <p className="comment">
-        {comment.by} commented: {comment.text}
-    </p>
-  }
+function CommentView(props: CommentViewProps): React.Element<*> {
+  const { comment } = props
+  return <p className="comment">
+    {comment.by} commented: {comment.text}
+  </p>
 }
