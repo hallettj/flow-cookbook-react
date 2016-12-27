@@ -44,7 +44,7 @@ export default class StoryView extends Component<void, StoryViewProps, StoryView
         content = <Comments commentTree={commentTree} />
       }
       else {
-        content = <p>no comments</p>
+        content = <p className="noContent">no comments</p>
       }
     }
     else {
@@ -83,7 +83,8 @@ type CommentViewProps = {
 
 function CommentView(props: CommentViewProps): React.Element<*> {
   const { comment } = props
-  return <p className="comment">
-    {comment.by} commented: {comment.text}
-  </p>
+  const html = { __html: comment.text }
+  return <div className="comment">
+    {comment.by} commented: <div dangerouslySetInnerHTML={html} />
+  </div>
 }
