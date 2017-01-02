@@ -41,7 +41,10 @@ class App extends Component<void,void,AppState> {
       content = <p className="error">{error.message}</p>
     }
     else if (selectedStory) {
-      content = <StoryView story={selectedStory} />
+      content = <StoryView
+        story={selectedStory}
+        onNavigateBack={() => this.deselectStory()}
+      />
     }
     else if (stories) {
       content = stories.map(story => (
@@ -70,6 +73,10 @@ class App extends Component<void,void,AppState> {
 
   selectStory(story: Story) {
     this.setState({ selectedStory: story })
+  }
+
+  deselectStory() {
+    this.setState({ selectedStory: null })
   }
 }
 

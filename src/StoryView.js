@@ -7,6 +7,7 @@ import type { Comment, CommentTree, Story } from 'hacker-news-example'
 
 type StoryViewProps = {
   story: Story,
+  onNavigateBack: () => void,
 }
 
 type StoryViewState = {
@@ -33,7 +34,7 @@ export default class StoryView extends Component<void, StoryViewProps, StoryView
   }
 
   render() {
-    const { error, commentTree } = this.state
+    const { commentTree, error } = this.state
 
     let content
     if (error) {
@@ -51,7 +52,17 @@ export default class StoryView extends Component<void, StoryViewProps, StoryView
       content = <p className="loading">loading...</p>
     }
 
-    return content
+    return <div>
+      <a href="#" onClick={event => this.navigateBack(event)}>
+        ← back to stories
+      </a>
+      {content}
+    </div>
+  }
+
+  navigateBack(event: Event) {
+    event.preventDefault()
+    this.props.onNavigateBack()
   }
 }
 
