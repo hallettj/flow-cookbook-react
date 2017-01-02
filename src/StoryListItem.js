@@ -12,7 +12,9 @@ type StoryListItemProps = {
 export default function StoryListItem(props: StoryListItemProps): React.Element<*> {
   const { by, title } = props.story
   return <p>
-    <a href="#" onClick={event => selectStory(props, event)}>{title}</a> posted by {by}
+    <a href="#" onClick={event => selectStory(props, event)}>
+      {title}
+    </a> posted by {by}
   </p>
 }
 
