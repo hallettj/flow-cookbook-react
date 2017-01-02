@@ -63,15 +63,15 @@ function Comments(props: CommentTreeProps): React.Element<*> {
   return <ul>
     {props.commentTree.map(({ comment, kids }) => {
       if (kids.length > 0) {
-        return <div className="comment-subtree" key={comment.id}>
+        return <li className="comment-subtree" key={comment.id}>
           <CommentView comment={comment} />
           <Comments commentTree={kids} />
-        </div>
+        </li>
       }
       else {
-        return <div className="comment-leaf" key={comment.id}>
+        return <li className="comment-leaf" key={comment.id}>
           <CommentView comment={comment} />
-        </div>
+        </li>
       }
     })}
   </ul>
@@ -85,6 +85,6 @@ function CommentView(props: CommentViewProps): React.Element<*> {
   const { comment } = props
   const html = { __html: comment.text }
   return <div className="comment">
-    {comment.by} commented: <div dangerouslySetInnerHTML={html} />
+    <em>{comment.by} commented:</em> <div className="comment-body" dangerouslySetInnerHTML={html} />
   </div>
 }
