@@ -8,13 +8,17 @@ import StoryView from './StoryView'
 
 import type { Story } from 'hacker-news-example'
 
+type AppProps = {
+  numStories: number,
+}
+
 type AppState = {
   selectedStory?: ?Story,
   stories?: Story[],
   error?: Error,
 }
 
-class App extends Component<void,void,AppState> {
+class App extends Component<void, AppProps, AppState> {
   // Must declare `state` type in two places
   state: AppState
 
@@ -24,7 +28,7 @@ class App extends Component<void,void,AppState> {
   }
 
   componentDidMount() {
-    fetchTopStories(15 /* number of stories to fetch */)
+    fetchTopStories(this.props.numStories /* number of stories to fetch */)
       .then(stories => {
         // On success, update component state with an array of stories
         this.setState({ stories })

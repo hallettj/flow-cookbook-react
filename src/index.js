@@ -5,6 +5,6 @@ import App from './App'
 import './index.css'
 
 ReactDOM.render(
-  <App />,
+  <App numStories={15} />,
   document.getElementById('root')
 )
