@@ -24,11 +24,13 @@ class App extends Component<void,void,AppState> {
   }
 
   componentDidMount() {
-    fetchTopStories(15)
+    fetchTopStories(15 /* number of stories to fetch */)
       .then(stories => {
+        // On success, update component state with an array of stories
         this.setState({ stories })
       })
       .catch(error => {
+        // On error, update state to capture the error for display
         this.setState({ error })
       })
   }
