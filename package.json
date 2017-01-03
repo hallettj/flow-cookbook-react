@@ -10,7 +10,7 @@
     "regenerator-runtime": "^0.10.1"
   },
   "dependencies": {
-    "hacker-news-example": "hallettj/hacker-news-example#master",
+    "hacker-news-example": "hallettj/hacker-news-example",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   },

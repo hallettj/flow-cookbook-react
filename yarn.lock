@@ -2307,9 +2307,9 @@ gzip-size@3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
-hacker-news-example@hallettj/hacker-news-example#master:
+hacker-news-example@hallettj/hacker-news-example, hacker-news-example@hallettj/hacker-news-example#master:
   version "1.0.0"
-  resolved "https://codeload.github.com/hallettj/hacker-news-example/tar.gz/d8f950b7f5d4cfb25c4b0167bd0138c482e05f9b"
+  resolved "https://codeload.github.com/hallettj/hacker-news-example/tar.gz/c0d92566033a7deb6c78756f06b17ab709824202"
   dependencies:
     node-fetch "*"
 
