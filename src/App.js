@@ -40,15 +40,18 @@ class App extends Component<void,void,AppState> {
 
     let content
     if (error) {
+      // an error occurred fetching stories
       content = <p className="error">{error.message}</p>
     }
     else if (selectedStory) {
+      // the user is looking at comments on a story
       content = <StoryView
         story={selectedStory}
         onNavigateBack={() => this.deselectStory()}
       />
     }
     else if (stories) {
+      // stories are loaded, so display a line item for each story
       content = stories.map(story => (
         <StoryListItem
           story={story}
@@ -58,6 +61,7 @@ class App extends Component<void,void,AppState> {
       ))
     }
     else {
+      // no error and no stories means that stories are still loading
       content = <p className="loading">loading...</p>
     }
 
