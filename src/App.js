@@ -22,7 +22,7 @@ class App extends Component<void, AppProps, AppState> {
   // Must declare `state` type in two places
   state: AppState
 
-  constructor(props: void) {
+  constructor(props: AppProps) {
     super(props)
     this.state = {}
   }
