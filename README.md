@@ -2,7 +2,7 @@
 
 Example script to demonstrate type-checking React components with Flow.
 This is example code from the article
-[Flow Cookbook: React](http://sitr.us/todo.html).
+[Flow Cookbook: React](http://sitr.us/2017/01/03/flow-cookbook-react.html).
 
 Requires [yarn](https://yarnpkg.com/)
 
