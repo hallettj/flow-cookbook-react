@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import type { Story } from 'hacker-news-example'
+import type { Story } from 'flow-cookbook-hacker-news'
 
 type StoryListItemProps = {
   story: Story,

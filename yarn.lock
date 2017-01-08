@@ -2134,6 +2134,12 @@ flow-bin@^0.37.4:
   version "0.37.4"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.37.4.tgz#3d8da2ef746e80e730d166e09040f4198969b76b"
 
+flow-cookbook-hacker-news@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/flow-cookbook-hacker-news/-/flow-cookbook-hacker-news-1.0.0.tgz#79b3cd61294741c466a1ab629e88bdb3c051703d"
+  dependencies:
+    node-fetch "*"
+
 for-in@^0.1.5:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.6.tgz#c9f96e89bfad18a545af5ec3ed352a1d9e5b4dc8"
@@ -2306,12 +2312,6 @@ gzip-size@3.0.0:
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-3.0.0.tgz#546188e9bdc337f673772f81660464b389dce520"
   dependencies:
     duplexer "^0.1.1"
-
-hacker-news-example@hallettj/hacker-news-example, hacker-news-example@hallettj/hacker-news-example#master:
-  version "1.0.0"
-  resolved "https://codeload.github.com/hallettj/hacker-news-example/tar.gz/c0d92566033a7deb6c78756f06b17ab709824202"
-  dependencies:
-    node-fetch "*"
 
 handlebars@^4.0.1, handlebars@^4.0.3:
   version "4.0.6"

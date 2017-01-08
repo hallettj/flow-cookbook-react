@@ -1,12 +1,12 @@
 /* @flow */
 
 import React, { Component } from 'react'
-import { fetchTopStories } from 'hacker-news-example'
+import { fetchTopStories } from 'flow-cookbook-hacker-news'
 import './App.css'
 import StoryListItem from './StoryListItem'
 import StoryView from './StoryView'
 
-import type { Story } from 'hacker-news-example'
+import type { Story } from 'flow-cookbook-hacker-news'
 
 type AppProps = {
   numStories: number,

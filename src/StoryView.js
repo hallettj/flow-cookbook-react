@@ -1,9 +1,9 @@
 /* @flow */
 
 import React, { Component } from 'react'
-import { fetchComments } from 'hacker-news-example'
+import { fetchComments } from 'flow-cookbook-hacker-news'
 
-import type { Comment, CommentTree, Story } from 'hacker-news-example'
+import type { Comment, CommentTree, Story } from 'flow-cookbook-hacker-news'
 
 type StoryViewProps = {
   story: Story,
