@@ -3,7 +3,12 @@
 import React, { Component } from 'react'
 import { fetchComments } from 'flow-cookbook-hacker-news'
 
-import type { Comment, CommentTree, Story } from 'flow-cookbook-hacker-news'
+import type {
+  Comment,
+  CommentTree,
+  DeletedComment,
+  Story,
+} from 'flow-cookbook-hacker-news'
 
 type StoryViewProps = {
   story: Story,
@@ -89,11 +94,18 @@ function Comments(props: CommentTreeProps): React.Element<*> {
 }
 
 type CommentViewProps = {
-  comment: Comment,
+  comment: Comment | DeletedComment,
 }
 
 function CommentView(props: CommentViewProps): React.Element<*> {
   const { comment } = props
+
+  if (comment.deleted) {
+    return <div className="deleted-comment">
+      <em>(deleted)</em>
+    </div>
+  }
+
   const html = { __html: comment.text }
   return <div className="comment">
     <em>{comment.by} commented:</em> <div className="comment-body" dangerouslySetInnerHTML={html} />
