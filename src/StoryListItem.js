@@ -1,6 +1,6 @@
 /* @flow */
 
-import React from 'react'
+import * as React from 'react'
 
 import type { Story } from 'flow-cookbook-hacker-news'
 
@@ -9,7 +9,7 @@ type StoryListItemProps = {
   onSelect: () => void,
 }
 
-export default function StoryListItem(props: StoryListItemProps): React.Element<*> {
+export default function StoryListItem(props: StoryListItemProps) {
   const { by, title } = props.story
   return <p>
     <a href="#" onClick={event => selectStory(props, event)}>

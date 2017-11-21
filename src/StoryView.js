@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react'
+import * as React from 'react'
 import { fetchComments } from 'flow-cookbook-hacker-news'
 
 import type {
@@ -20,10 +20,8 @@ type StoryViewState = {
   error?: Error,
 }
 
-export default class StoryView extends Component<void, StoryViewProps, StoryViewState> {
-  state: StoryViewState
-
-  constructor(props: Story) {
+export default class StoryView extends React.Component<StoryViewProps, StoryViewState> {
+  constructor(props: StoryViewProps) {
     super(props)
     this.state = {}
   }

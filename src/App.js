@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react'
+import * as React from 'react'
 import { fetchTopStories } from 'flow-cookbook-hacker-news'
 import './App.css'
 import StoryListItem from './StoryListItem'
@@ -18,10 +18,7 @@ type AppState = {
   error?: Error,
 }
 
-class App extends Component<void, AppProps, AppState> {
-  // Must declare `state` type in two places
-  state: AppState
-
+class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props)
     this.state = {}
