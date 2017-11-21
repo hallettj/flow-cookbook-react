@@ -5,14 +5,14 @@
   "author": "Jesse Hallett <jesse@sitr.us>",
   "license": "MIT",
   "devDependencies": {
-    "flow-bin": "^0.37.4",
-    "react-scripts": "0.8.4",
-    "regenerator-runtime": "^0.10.1"
+    "flow-bin": "^0.59.0",
+    "react-scripts": "^1.0.17",
+    "regenerator-runtime": "^0.11.0"
   },
   "dependencies": {
     "flow-cookbook-hacker-news": "^1.0.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
